@@ -25,3 +25,5 @@ To Visit App:
 
 `localhost:3000`  
 
+If you want to directly browse this app click this link `[Sneaker city challenge github page](https://siyubu.github.io/BK/)`
+
