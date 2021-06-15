@@ -73,3 +73,6 @@
   margin-left: 4rem;
   width: 92%;
 }
+ul {
+  list-style-type: none;
+}

@@ -18,7 +18,8 @@ const boardTitle = {
     fontWeight: '900'
 }
 const SneakerDetail=(props)=>{
-    const {sneaker,cartItems} = props.history.location.state;
+    const {sneaker} = props.history.location.state;
+    const [cartItemSelected, setCartItem]               = useState({})
     const [price, setPrice]                     = useState(sneaker.sizes[0].price);
     const [quantity, setQuantity]               = useState(sneaker.sizes[0].quantity)
     const [size, setSize]                       =useState(sneaker.sizes[0].size)
@@ -52,24 +53,24 @@ const _onSizeSelection=(event)=>{
        e.preventDefault()
       const cost = price * selecteqQuantity;
       const cartItem={"picture":sneaker.picture,"brand":sneaker.brand, "model":sneaker.model, "quantity":selecteqQuantity,"cost":cost}
-      cartItems.push(cartItem)
+      setCartItem(cartItem)
 
   }
 
   const viewCart=(e)=>{
       e.preventDefault()
-    props.history.push(`/cart`,cartItems)
+    props.history.push(`/cart`,cartItemSelected)
   }
 
     return(
         <div className="sneakercard" style={styles}>
-            <img src={sneaker.picture} style={{width: '400px', objectFit: 'contain'}}/>
+            <img src={sneaker.picture} style={{width: '400px', objectFit: 'contain'} } alt="Sneaker"/>
             <div className="sneaker-info" style={boxStyle}>
-                <h6><b style={boardTitle}>Brand:</b> {sneaker.brand}</h6>
-                <h6><b style={boardTitle}>Model:</b> {sneaker.model}</h6>
-                <h6><b style={boardTitle}> Price:</b> {price } Rwf</h6>
-                <h6><b style={boardTitle}>Available:</b> {quantity}</h6>
-                <p><small className="text-muted">{'released on ' + sneaker.released_date}</small></p>
+                <h6 data-testid="detail_brand"><b style={boardTitle}>Brand:</b> {sneaker.brand}</h6>
+                <h6 data-testid="detail_model"><b style={boardTitle}>Model:</b> {sneaker.model}</h6>
+                <h6 data-testid="detail_price"><b style={boardTitle}> Price:</b> {price } Rwf</h6>
+                <h6 data-testid="detail_quantity"><b style={boardTitle}>Available:</b> {quantity}</h6>
+                <p data-testid="detail_released"><small className="text-muted">{'released on ' + sneaker.released_date}</small></p>
                 <br />
                 <p><b>Select Size:</b>
                 <Select className=""

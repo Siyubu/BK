@@ -4,10 +4,10 @@ const Cart=(props)=>{
     const detail = props.history.location.state
 
    const renderTableData=()=> {
-        return detail.map((element, index) => {
-           const {picture, brand, model, quantity, cost} = element
+       // return detail.map((element, index) => {
+           const {picture, brand, model, quantity, cost} = detail
            return (
-              <tr key={index}>
+              <tr>
                  <td><img src={picture} style={{width: '200px',height:'150px', objectFit: 'contain'}}/></td>
                  <td>
                      <p>Brand: { brand}</p>
@@ -18,7 +18,7 @@ const Cart=(props)=>{
               </tr>
            )
            
-        })
+       // })
      }
 
     const renderTableHeader =() =>{

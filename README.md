@@ -7,7 +7,8 @@
 ## Installation and Setup Instructions
 
 Clone down this repository:
-`git clone .....`
+
+`git clone https://github.com/Siyubu/BK.git`
 
 Installation:
 
@@ -25,5 +26,5 @@ To Visit App:
 
 `localhost:3000`  
 
-If you want to directly browse this app click this link `[Sneaker city challenge github page](https://siyubu.github.io/BK/)`
+If you want to directly browse this app click this link  [Sneaker city challenge github page](https://siyubu.github.io/BK/)
 
