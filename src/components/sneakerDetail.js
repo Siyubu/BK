@@ -54,6 +54,9 @@ const _onSizeSelection=(event)=>{
       const cost = price * selecteqQuantity;
       const cartItem={"picture":sneaker.picture,"brand":sneaker.brand, "model":sneaker.model, "quantity":selecteqQuantity,"cost":cost}
       setCartItem(cartItem)
+      var pop= document.getElementById('popupContainer');
+      pop.innerHTML = "Successfully Added on Cart!!"
+      pop.style.display="inline"
 
   }
 
@@ -63,6 +66,8 @@ const _onSizeSelection=(event)=>{
   }
 
     return(
+        <>
+        <button id='popupContainer'className="btn btn-info"></button>
         <div className="sneakercard" style={styles}>
             <img src={sneaker.picture} style={{width: '400px', objectFit: 'contain'} } alt="Sneaker"/>
             <div className="sneaker-info" style={boxStyle}>
@@ -87,13 +92,13 @@ const _onSizeSelection=(event)=>{
                 onChange={(e)=>_onQuantitySelection(e)}
                 /></p>
                 <br />
-                <br />
-                <br />
+                
                 <button type="button" class="btn btn-primary btn-block" onClick ={(e)=>addToCart(e)}>ADD TO CART</button>
                 <button type="button" class="btn btn-secondary btn-block" onClick ={(e)=>viewCart(e)}>VIEW CART</button>
-
             </div>
         </div>
+        
+        </>
     )
 }
 
